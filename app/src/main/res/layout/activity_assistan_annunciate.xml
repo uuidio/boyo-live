@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="contentDescription">
+
+    <com.kol.jumhz.common.widget.ActivityTitle
+        android:id="@+id/layout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:canBack="true"
+        app:titleText="@string/assistant_app_annunciate" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/white">
+        <EditText
+            android:id="@+id/et_annunciate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16.5dp"
+            android:layout_marginEnd="16.5dp"
+            android:background="@null"
+            android:hint="请输入公告详情"
+            android:textColorHint="@color/colorTextG2"
+            android:textColor="@color/colorTextG4"
+            android:gravity="top"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="296dp"
+        android:layout_height="46.5dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/btn_sure"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/btn_login"/>
+
+</LinearLayout>

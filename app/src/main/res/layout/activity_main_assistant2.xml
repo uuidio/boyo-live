@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.MainAssistantActivity2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/rl_top"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="@dimen/h_120px_port">
+
+        <ImageView
+            android:layout_width="@dimen/w_90px_port"
+            android:layout_centerVertical="true"
+            android:id="@+id/im_head"
+            android:layout_marginLeft="@dimen/w_48px_port"
+            android:background="@drawable/headphoto_default"
+            android:layout_height="@dimen/h_90px_port"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_font_36px_port"
+            android:id="@+id/tv_title"
+            tools:text="XXX科学城店"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/w_21px_port"
+            android:layout_toRightOf="@id/im_head"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tv_exit"
+            android:text="退出"
+            android:textStyle="bold"
+            android:textColor="#FF000F"
+            android:textSize="@dimen/_font_36px_port"
+            android:layout_marginRight="@dimen/w_60px_port"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_top"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="1px"
+        android:id="@+id/rl_lottery"
+        android:background="@color/white"
+        android:layout_height="@dimen/h_200px_port">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_37"
+            android:layout_marginLeft="@dimen/w_91px_port"
+            android:layout_centerVertical="true"
+            android:text="发起抽奖"
+            android:textSize="@dimen/_font_36px_port"
+            android:layout_height="wrap_content"/>
+
+      <ImageView
+          android:layout_width="@dimen/w_28px_port"
+          android:background="@drawable/ic_right"
+          android:layout_alignParentRight="true"
+          android:backgroundTint="#c4c4c4"
+          android:layout_marginRight="@dimen/w_54px_port"
+          android:layout_centerVertical="true"
+          android:layout_height="@dimen/h_28px_port"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_lottery"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_lottery"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="1px"
+        android:id="@+id/rl_mute"
+        android:background="@color/white"
+        android:layout_height="@dimen/h_200px_port">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_37"
+            android:layout_marginLeft="@dimen/w_91px_port"
+            android:layout_centerVertical="true"
+            android:text="禁言列表"
+            android:textSize="@dimen/_font_36px_port"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="@dimen/w_28px_port"
+            android:background="@drawable/ic_right"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#c4c4c4"
+            android:layout_marginRight="@dimen/w_54px_port"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/h_28px_port"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_mute"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_mute"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="1px"
+        android:id="@+id/rl_notice"
+        android:background="@color/white"
+        android:layout_height="@dimen/h_200px_port">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_37"
+            android:layout_marginLeft="@dimen/w_91px_port"
+            android:layout_centerVertical="true"
+            android:text="直播间通告"
+            android:textSize="@dimen/_font_36px_port"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="@dimen/w_28px_port"
+            android:background="@drawable/ic_right"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#c4c4c4"
+            android:layout_marginRight="@dimen/w_54px_port"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/h_28px_port"/>
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_notice"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_notice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="1px"
+        android:id="@+id/rl_relation_goods"
+        android:background="@color/white"
+        android:layout_height="@dimen/h_200px_port">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_37"
+            android:layout_marginLeft="@dimen/w_91px_port"
+            android:layout_centerVertical="true"
+            android:text="关联直播商品"
+            android:textSize="@dimen/_font_36px_port"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="@dimen/w_28px_port"
+            android:background="@drawable/ic_right"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#c4c4c4"
+            android:layout_marginRight="@dimen/w_54px_port"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/h_28px_port"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

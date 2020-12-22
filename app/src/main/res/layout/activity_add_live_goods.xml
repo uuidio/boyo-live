@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="contentDescription"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <com.kol.jumhz.common.widget.ActivityTitle
+        android:id="@+id/rl_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:canBack="true"
+        app:titleText="@string/activity_add_goods_title"
+        app:moreText="@string/activity_add_goods_title_reset"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/rl_title_bar"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_search"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/ic_search"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/iv_search_delete"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/ic_search_delete"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"/>
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/iv_search"
+            android:layout_marginEnd="40dp"
+            android:background="@null"
+            android:hint="搜索商品"
+            android:textColorHint="@color/colorTextG1"
+            android:textSize="14sp"
+            android:text=""
+            android:textColor="@color/colorTextG3"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_below="@+id/rl_search"
+        android:background="@color/white">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:layout_above="@id/ll_bottom"
+        android:background="#F3F3F3">
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="暂无商品"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextG2"
+        android:visibility="visible"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_goods"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/line"
+        android:layout_above="@id/ll_bottom"
+        android:background="@color/transparent">
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/rv_goods"
+        android:background="@color/line" />
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/colorTextWhite">
+        <RelativeLayout
+            android:id="@+id/rl_all"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick">
+
+            <CheckBox
+                android:id="@+id/cb"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:background="@drawable/checkbox_selectors"
+                android:button="@null" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/cb"
+                android:layout_marginLeft="10dp"
+                android:text="@string/activity_add_goods_all"
+                android:textColor="@color/colorTextG4"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:background="@color/colorAccent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_add_goods_add"
+                android:textSize="16sp"
+                android:textColor="@color/colorTextWhite"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

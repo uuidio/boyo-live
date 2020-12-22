@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.kol.jumhz.view.LiveShareDialogFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="298dp"
+        android:layout_height="465dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/iv_img1"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:scaleType="fitXY"/>
+
+        <ImageView
+            android:id="@+id/iv_img3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_img1"
+            android:layout_toStartOf="@id/iv_img3"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/iv_img2"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/iv_img2"
+                android:layout_marginStart="10dp"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="@color/colorTextG3"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_head"
+            android:layout_toStartOf="@id/iv_img3"
+            android:paddingTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="@color/colorTextG4"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignTop="@id/rl"
+        android:layout_toEndOf="@id/rl"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-40dp"
+        android:background="@drawable/close"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="298dp"
+        android:layout_height="46.5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/rl"
+        android:layout_centerHorizontal="true"
+        android:text="保存海报"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/btn_register"/>
+
+</RelativeLayout>

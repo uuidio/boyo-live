@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.kol.jumhz"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "0.50"
+
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${variant.name}-${variant.versionName}.apk"
+                }
+            }
+
+            ndk {
+                abiFilters "armeabi-v7a"//, "armeabi"
+            }
+        }
+    }
+
+    signingConfigs {
+    }
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.okhttp3/okhttp/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okhttp3/okhttp/pom.properties'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'src/main/jniLibs')
+    implementation 'com.android.support:design:29.0.0'
+    implementation 'com.android.support:recyclerview-v7:29.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //    compile 'com.android.volley:volley:1.0.0'
+    implementation 'com.github.ctiao:dfm:0.4.4'
+    //    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta1' // or 1.4-beta1
+    //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1' // or 1.4-beta1
+    //    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1' // or 1.4-beta1
+    implementation(name: 'volley-1.0.0', ext: 'aar')
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.facebook.fresco:fresco:0.7.0'
+}
+

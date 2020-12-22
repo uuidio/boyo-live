@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="contentDescription"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kol.jumhz.common.widget.ActivityTitle
+        android:id="@+id/rl_user_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:canBack="true"
+        app:titleText="@string/app_setting" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_below="@id/rl_user_info_title"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/iv_ui_head"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"/>
+        <TextView
+            android:id="@+id/tv_ui_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_ui_head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:textColor="@color/colorTextBlack"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <com.kol.jumhz.view.LineControllerView
+        android:id="@+id/lcv_ui_lottery"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_user_info"
+        android:layout_marginTop="10dp"
+        app:name="@string/assistant_app_lottery"
+        app:isBottom="true"
+        app:canNav="true"/>
+    <com.kol.jumhz.view.LineControllerView
+        android:id="@+id/lcv_ui_banned"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/lcv_ui_lottery"
+        android:layout_marginTop="10dp"
+        app:name="@string/assistant_app_banned"
+        app:isBottom="true"
+        app:canNav="true"/>
+
+    <com.kol.jumhz.view.LineControllerView
+        android:id="@+id/lcv_ui_annunciate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/lcv_ui_banned"
+        android:layout_marginTop="10dp"
+        app:name="@string/assistant_app_annunciate"
+        app:isBottom="true"
+        app:canNav="true"/>
+
+    <RelativeLayout
+        android:id="@+id/lcv_ui_version"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/lcv_ui_annunciate"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorTextWhite">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/assistant_app_version"
+            android:textSize="18sp"
+            android:textColor="@color/color_title_black" />
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="26dp"
+            android:text="0.00"
+            android:textSize="18sp"
+            android:textColor="@color/colorTextG2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lcv_ui_logout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/lcv_ui_version"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/colorTextWhite">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login_out"
+            android:textSize="18sp"
+            android:textColor="@color/colorRed" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal|center_vertical">
+        <TextView
+            android:id="@+id/tv_xieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yhxy1"
+            android:layout_marginEnd="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/tv_yinsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/yszc1"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
+

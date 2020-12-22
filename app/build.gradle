@@ -1,0 +1,204 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'bugly'
+
+bugly {
+    appId = '779285d5a7' // 注册时分配的App ID
+    appKey = '8eacd9c3-2762-4fc1-8722-a4d79f10ca15' // 注册时分配的App Key
+}
+
+def getVersionCode() {// 获取版本号
+    def versionFile = file('version.properties')// 读取第一步新建的文件
+    if (versionFile.canRead()) {// 判断文件读取异常
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionCode = versionProps['VERSION_CODE'].toInteger()// 读取文件里面的版本号
+        def runTasks = gradle.startParameter.taskNames
+        if (':app:assembleRelease' in runTasks) {//仅在app:assembleRelease任务是增加版本号,其他渠道包在此分别配置
+            // 版本号自增之后再写入文件（此处是关键，版本号自增+1）
+            versionProps['VERSION_CODE'] = (++versionCode).toString()
+            versionProps.store(versionFile.newWriter(), null)
+        }
+        return versionCode // 返回自增之后的版本号
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getVersionName() {// 获取版本名
+    def versionFile = file('version.properties')// 读取第一步新建的文件
+    if (versionFile.canRead()) {// 判断文件读取异常
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionName = versionProps['VERSION_NAME'].toString()// 读取文件里面的版本名
+        def runTasks = gradle.startParameter.taskNames
+        if (':app:assembleRelease' in runTasks) {//仅在app:assembleRelease任务是增加版本号,其他渠道包在此分别配置
+            // 当获取当前日期的版本名之后再写入文件
+            def date = new Date()
+            versionProps['VERSION_NAME'] = date.format('yyyyMMddHHmm').toString()
+            versionProps.store(versionFile.newWriter(), null)
+            versionName = date.format('yyyyMMddHHmm').toString()
+        }
+        return versionName // 返回当前日期的版本名
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+android {
+    compileSdkVersion = 29
+    buildToolsVersion "29.0.2"
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    def currentVersionCode = getVersionCode()
+    def currentVersionName = getVersionName()
+
+    defaultConfig {
+        applicationId = "com.kol.jumhz"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode currentVersionCode
+        versionName currentVersionName
+
+        renderscriptTargetApi = 14
+        renderscriptSupportModeEnabled = true
+        multiDexEnabled = true
+        //resConfigs "en"
+
+        ndk {
+            abiFilters "armeabi-v7a"//, "armeabi"
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    signingConfigs {
+        release {
+            storeFile file('../app/document/Jumhz.jks')
+            storePassword 'jumhzwwwwww'
+            keyAlias 'kaJumhz'
+            keyPassword 'jumhzwwwwww'
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    //${buildType.name}
+                    outputFileName = "kol-v${variant.versionName}-${variant.versionCode}.apk"
+                }
+            }
+        }
+
+        debug {
+            signingConfig signingConfigs.release
+        }
+
+    }
+
+    repositories {
+        flatDir {
+            dirs '../MHUI/libs', 'libs'
+        }
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    configurations {
+        all*.exclude module: 'okhttp'
+        all*.exclude module: 'okio'
+    }
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+    }
+    ndkVersion '21.0.6113669'
+}
+
+dependencies {
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs/upload')
+    implementation files('libs/upload/LiteAVSDK_Professional_6.5.7272.aar')
+//  COS 上传需要依赖的jar
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+//  MLVB 需要依赖 okhttp 拦截器
+   implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+//  MLVB 需要使用 gson 进行 json 解析
+    //  弹幕功能需要依赖此库
+    //implementation 'com.github.ctiao:dfm:0.4.4'
+    //图片加载库
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+//  Dex 多分包依赖
+    implementation 'com.android.support:multidex:1.0.3'
+    //用于 crash 上报的 bugly 组件
+    implementation 'com.tencent.bugly:crashreport:3.1.0'
+    //implementation 'com.tencent.bugly:symtabfileuploader:2.1.0'
+    // 美狐美颜面板
+    implementation project(':MHUI')
+    //今日头条屏幕适配
+    implementation 'me.jessyan:autosize:1.2.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //GalleryPick 图片选择器
+    implementation 'com.github.YancyYe:GalleryPick:1.2.1'
+    //implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.2'
+    //Android-PickerView 时间选择器和选项选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    // 网易云信IM基础功能 (必需)
+    implementation 'com.netease.nimlib:basesdk:7.5.0'
+    // 网易云信IM聊天室
+    implementation 'com.netease.nimlib:chatroom:7.5.0'
+    // Kongzue Dialog V3
+    implementation 'com.kongzue.dialog_v3:dialog:3.1.8'
+    // Java-WebSocket
+    implementation "org.java-websocket:Java-WebSocket:1.4.0"
+    // 微信分享、登录、收藏、支付等功能
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.5.8'
+    // DKVideoPlayer播放器，必选，内部默认使用系统mediaplayer进行解码
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-java:3.2.6'
+    // DKVideoPlayer播放器可选，包含StandardVideoController的实现
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:3.2.6'
+    // DKVideoPlayer播放器可选，使用ijkplayer进行解码
+    implementation 'com.github.dueeeke.dkplayer:player-ijk:3.2.6'
+    // ImmersionBar -- android 4.4以上沉浸式实现
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // 仿qq聊天消息长按弹窗
+    implementation 'com.github.AndyAls:QPopuWindow:v2.0.0'
+    // 骨架屏
+    implementation 'com.ethanhua:skeleton:1.1.2'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+    // 蒲公英SDK
+    implementation 'com.pgyersdk:sdk:3.0.10'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation  "com.orhanobut:logger:2.2.0"
+    implementation  "org.greenrobot:eventbus:3.1.1"
+    api 'com.google.code.gson:gson:2.8.6'
+    api "com.sm:tools:1.0.6"
+    implementation 'com.sm:http-download:1.0.13'
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,25 @@
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/.idea
+/.gradle
+gradle.properties
+gradlew
+gradlew.bat
+.idea/
+build/
+# Built application 文件
+*.apk
+*.ap_
+
+# ART/Dalvik VM 文件
+*.dex
+
+# Java class 文件
+*.class
+*.jks
+._*

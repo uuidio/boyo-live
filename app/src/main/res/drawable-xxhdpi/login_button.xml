@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--给 "登录" 的button按钮设置drawable，分别设置按下、没有按下、可用、不可用-->
+    <item android:drawable="@drawable/login_button_p" android:state_pressed="true"/>
+
+    <item android:drawable="@drawable/login_button_e" android:state_enabled="false"/>
+    <item android:drawable="@drawable/login_button_n" android:state_enabled="true"/>
+    <item android:drawable="@drawable/login_button_e"/>
+
+</selector>

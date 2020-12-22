@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTextWhite"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#F3F3F3"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/top"
+        android:background="@color/colorTextWhite">
+        <TextView
+            android:id="@+id/tv_titile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.5dp"
+            android:text="直播间标题直播间标题"
+            android:textSize="16sp"
+            android:textColor="@color/colorGray8"
+            android:background="@color/colorGray8"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/rl_delete"
+            android:layout_marginEnd="23.5dp"
+            android:text="00/00 00:00"
+            android:textSize="16sp"
+            android:textColor="@color/colorGray8"
+            android:background="@color/colorGray8"/>
+        <RelativeLayout
+            android:id="@+id/rl_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10.5dp"
+            android:background="@color/colorGray8">
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="14.5dp"
+                android:layout_height="14.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="4.5dp"
+                android:visibility="invisible"
+                android:background="@drawable/ic_delete_red"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_delete"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"
+                android:text="@string/btn_delete"
+                android:textSize="16sp"
+                android:textColor="@color/colorRed"/>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_createing"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginTop="5.5dp"
+        android:layout_marginBottom="10.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginEnd="10.5dp">
+        <ImageView
+            android:id="@+id/iv_createing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray8"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:width="@dimen/w_47px_port"
+        android:gravity="center"
+          android:drawable="@drawable/bg_picture_bg"
+        android:height="@dimen/w_47px_port"
+        />
+
+    <item android:drawable="@drawable/pic_ok"
+        android:gravity="center"
+        android:width="@dimen/w_46px_port"
+        android:height="@dimen/w_46px_port"/>
+
+
+
+</layer-list>

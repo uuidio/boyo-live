@@ -1,0 +1,146 @@
+<resources>
+    <item name="tag_first" type="id"></item>
+
+    <item name="tag_second" type="id"></item>
+    <string name="app_name">优视直播</string>
+    <string name="btn_return_home">返回首页</string>
+    <string name="btn_return">返回</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_sure">确定</string>
+    <string name="btn_ok">完成</string>
+
+
+    <!--loginActivity -->
+    <string name="btn_add">添加</string>
+    <string name="btn_save">保存</string>
+    <string name="activity_login_login">登录</string>
+    <string name="activity_login_register">注册</string>
+    <string name="activity_login_username">主播账号</string>
+    <string name="activity_login_username_assistant">助理账号</string>
+    <string name="activity_login_username_hint">请输入</string>
+    <string name="activity_login_password">登录密码</string>
+    <string name="activity_login_password_hint">请输入</string>
+    <string name="activity_login_assistant">助理登录</string>
+    <string name="activity_login_anchor">主播登录</string>
+    <string name="yhxy"><u>《用户协议》</u></string>
+    <string name="yszc"><u>《隐私政策》</u></string>
+    <!--loginActivity -->
+
+    <!--registerActivity -->
+    <string name="yhxy1"><u>用户协议</u></string>
+    <string name="yszc1"><u>隐私政策</u></string>
+    <string name="activity_register_title">注册账号</string>
+    <string name="activity_register_register">注册</string>
+    <string name="activity_register_username">账号昵称</string>
+    <string name="activity_register_username_hint">用户名为小写字母、数字、下划线</string>
+    <string name="activity_register_password">账号密码</string>
+    <string name="activity_register_password_hint">用户密码为8~16位个字符</string>
+    <string name="activity_register_password_verify">密码确认</string>
+    <!--registerActivity -->
+
+    <!-- permission check-->
+    <string name="activity_register_password_verify_hint">确认密码</string>
+
+    <string name="activity_register_return">返回</string>
+
+    <!-- add live activity-->
+    <string name="float_window_not_allow">悬浮窗权限未开启 请在应用-权限中打开悬浮窗权限</string>
+    <string name="dialog_input_text_hint">说点什么吧...</string>
+    <string name="activity_add_live_title_bar">直播间预告</string>
+    <string name="activity_add_live_title_reset">重置</string>
+    <string name="activity_add_live_title">直播标题</string>
+    <string name="activity_add_live_title_hint">请填写</string>
+    <string name="activity_add_live_time">开播时间</string>
+    <string name="activity_add_live_time_hint">请选择</string>
+    <string name="activity_add_live_intro">直播简介</string>
+    <string name="activity_add_live_intro_hint">请输入简介</string>
+    <string name="activity_add_live_cover">直播间封面</string>
+
+    <!-- add goods activity-->
+    <string name="activity_add_live_goods">添加直播商品</string>
+    <string name="activity_add_live_ok">确定</string>
+    <string name="activity_add_goods_title">添加商品</string>
+    <string name="activity_add_goods_title_reset">重置</string>
+
+    <!-- relevance live goods activity-->
+    <string name="activity_add_goods_all">全选</string>
+    <string name="activity_add_goods_add">添加</string>
+    <string name="activity_relevance_live_goods_title">添加本场直播商品</string>
+    <string name="activity_relevance_live_goods_title_drag">自定义排序</string>
+    <string name="activity_relevance_live_goods_drag">排序</string>
+    <string name="activity_relevance_live_goods_all">全选</string>
+
+    <!-- assistant activity-->
+    <string name="activity_relevance_live_goods_add">添加</string>
+
+    <!-- playback activity-->
+    <string name="activity_relevance_live_goods_delete">删除</string>
+
+    <!-- live play -->
+    <string name="activity_assistant_title">助理列表</string>
+    <string name="activity_playback_title">历史回放</string>
+    <string name="send">发送</string>
+    <string name="live_end_tips">直播结束啦!</string>
+    <string name="live_time_tips">直播时长</string>
+    <string name="live_members_tips">观看人数</string>
+
+    <!-- pushstream -->
+
+    <!-- msgadapter -->
+    <string name="live_hot_tips">本场热度</string>
+    <string name="live_admires_tips">获赞数量</string>
+
+    <!-- LiveForeshowActivity-->
+    <string name="liveforeshow_title">直播预告</string>
+    <string name="btn_edit">编辑</string>
+    <string name="btn_share">分享</string>
+    <string name="btn_delete">删除</string>
+    <string name="activity_share">分享到</string>
+
+    <!-- userinfo fragment-->
+    <string name="userinfo_title">编辑个人资料</string>
+    <string name="userinfo_head">头像</string>
+    <string name="userinfo_nickname">昵称</string>
+
+    <string name="app_setting">设置</string>
+    <string name="app_publish_live">发布直播预告</string>
+    <string name="app_relevance_live">关联直播商品</string>
+    <string name="app_check_aid">查看助理</string>
+    <string name="app_playback">精彩回放</string>
+    <string name="btn_close">强制关闭直播</string>
+    <string name="btn_login_out">退出登录</string>
+
+    <!--Main Assistant Activity-->
+    <string name="assistant_app_setting">设置</string>
+    <string name="assistant_app_lottery">发起抽奖</string>
+    <string name="assistant_app_banned">禁言列表</string>
+    <string name="assistant_app_annunciate">直播间公告</string>
+    <string name="assistant_app_version">版本号</string>
+
+    <!-- lottery activity-->
+    <string name="activity_lottery_list">中奖名单</string>
+    <string name="activity_lottery_name">活动名称</string>
+    <string name="activity_lottery_goods">奖励物品</string>
+    <string name="activity_lottery_num">中奖人数</string>
+    <string name="activity_lottery_time">响应时间</string>
+    <string name="activity_lottery_timess">请填写</string>
+    <string name="activity_lottery_tips">注意:用户必须在响应时间内点击“抽奖”才算成功参与活动</string>
+
+    <!-- banned activity-->
+    <string name="activity_banned">解除禁言</string>
+
+    <!-- set -->
+
+    <!-- icon_edit -->
+
+
+    <!-- fragment publish -->
+    <string name="publish_wait_uploading">请等待封面上传完成</string>
+    <string name="text_publish">开始直播</string>
+    <string name="text_live_preview">发布直播</string>
+    <string name="text_live_title_input">请输入直播标题</string>
+    <string name="text_live_add_title_tips">给你的直播设置一个满意的封面</string>
+    <string name="tip_no_permission">权限不足</string>
+    <string name="chongzhi">重置</string>
+
+</resources>

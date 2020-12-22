@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTextWhite"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/cb"
+        android:layout_width="@dimen/w_53px_port"
+        android:layout_height="@dimen/h_53px_port"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/w_58px_port"
+        android:background="@drawable/checkbox_selectors"
+        android:button="@null" />
+    <RelativeLayout
+        android:id="@+id/rl_goods"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h_267px_port"
+        android:layout_toEndOf="@id/cb"
+        android:paddingRight="@dimen/w_52px_port"
+        android:layout_marginStart="@dimen/w_60px_port"
+        android:background="@color/colorTextWhite">
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/w_203px_port"
+            android:layout_marginRight="@dimen/w_33px_port"
+            android:layout_height="@dimen/h_203px_port"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/tv_titile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_image"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_toEndOf="@id/iv_image"
+            android:text=""
+            android:textSize="@dimen/_font_36px_port"
+            android:textColor="@color/colorTextBlack" />
+        <TextView
+            android:id="@+id/tv_num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titile"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/iv_image"
+            android:visibility="invisible"
+            android:text="商品货号: "
+            android:textSize="@dimen/_font_36px_port"
+            android:textColor="@color/colorTextG3" />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titile"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/tv_num1"
+            android:layout_marginStart="5dp"
+            android:visibility="invisible"
+            android:text=""
+            android:textSize="@dimen/_font_36px_port"
+            android:textColor="@color/colorTextG3" />
+
+        <TextView
+            android:id="@+id/tv_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_image"
+            android:layout_toEndOf="@id/iv_image"
+            android:text="¥"
+            android:textSize="@dimen/_font_36px_port"
+            android:textColor="@color/colorSendName4" />
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_image"
+            android:layout_toEndOf="@id/tv_price1"
+            android:layout_marginStart="5dp"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="@color/colorSendName4" />
+    </RelativeLayout>
+
+</RelativeLayout>

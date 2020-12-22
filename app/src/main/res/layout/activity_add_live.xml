@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="contentDescription"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kol.jumhz.common.widget.ActivityTitle
+        android:id="@+id/rl_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:canBack="true"
+        app:titleText="@string/activity_add_live_title_bar"
+        app:moreText="@string/activity_add_live_title_reset"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_below="@id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_live_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_200px_port"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/tv_live_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/w_91px_port"
+                    android:text="@string/activity_add_live_title"
+                    android:textColor="@color/colorTextG4"
+                    android:textSize="@dimen/_font_36px_port" />
+                <EditText
+                    android:id="@+id/et_live_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_live_title"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/w_41px_port"
+                    android:layout_marginRight="@dimen/w_54px_port"
+                    android:background="@null"
+                    android:hint="@string/activity_add_live_title_hint"
+                    android:textColorHint="@color/colorTextG2"
+                    android:textColor="@color/colorTextG4"
+                    android:textSize="@dimen/_font_36px_port" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_200px_port"
+                android:layout_marginTop="@dimen/h_14px_port"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/tv_live_time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/w_91px_port"
+                    android:text="@string/activity_add_live_time"
+                    android:textColor="@color/colorTextG4"
+                    android:textSize="@dimen/_font_36px_port" />
+                <RelativeLayout
+                    android:id="@+id/rl_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/w_54px_port"
+                    android:layout_toEndOf="@id/tv_live_time_title"
+                    android:descendantFocusability="beforeDescendants">
+                    <TextView
+                        android:id="@+id/tv_live_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/w_41px_port"
+                        android:hint="@string/activity_add_live_time_hint"
+                        android:textColorHint="@color/colorTextG2"
+                        android:textColor="@color/colorTextG4"
+                        android:textSize="@dimen/_font_36px_port" />
+                    <ImageView
+                        android:id="@+id/iv_live_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:enabled="false"
+                        android:src="@drawable/ic_right"
+                        android:tint="@color/colorGray3" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp"
+                android:background="#ffffff" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_200px_port"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/h_14px_port"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/rl_live_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/w_91px_port">
+                    <TextView
+                        android:id="@+id/tv_live_intro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/activity_add_live_intro"
+                        android:textColor="@color/colorTextG4"
+                        android:textSize="@dimen/_font_36px_port" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="@dimen/w_54px_port"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/rl_live_intro"
+                    android:layout_marginLeft="@dimen/w_41px_port">
+                    <EditText
+                        android:id="@+id/et_live_intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="20px"
+                        android:paddingBottom="10dp"
+                        android:background="@null"
+                        android:hint="@string/activity_add_live_intro_hint"
+                        android:textColorHint="@color/colorTextG2"
+                        android:textColor="@color/colorTextG4"
+                        android:textSize="@dimen/_font_36px_port"
+                        android:gravity="center_vertical"/>
+                </RelativeLayout>
+            </RelativeLayout>
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp"
+                android:background="#ffffff" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_334px_port"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/rl_live_cover"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/h_28px_port"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/w_91px_port">
+                    <TextView
+                        android:id="@+id/tv_live_cover"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/activity_add_live_cover"
+                        android:textColor="@color/colorTextG4"
+                        android:textSize="@dimen/_font_36px_port" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_iv_live_cover"
+                    android:layout_width="@dimen/w_188px_port"
+                    android:layout_height="@dimen/h_188px_port"
+                    android:layout_marginTop="@dimen/h_26px_port"
+                    android:layout_below="@+id/rl_live_cover"
+                    android:layout_alignStart="@+id/rl_live_cover">
+                    <ImageView
+                        android:id="@+id/iv_live_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/ic_add_image" />
+                </RelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_result_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/w_34px_port"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/rl_live_cover"
+                    android:layout_alignTop="@id/rl_iv_live_cover"
+                    android:layout_toEndOf="@id/rl_iv_live_cover"
+                    android:layout_alignBottom="@id/rl_iv_live_cover"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_marginRight="@dimen/w_54px_port"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_446px_port"
+                android:layout_marginTop="@dimen/h_14px_port"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/rl_live_goods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/h_28px_port"
+                    android:layout_marginLeft="@dimen/w_91px_port">
+                    <TextView
+                        android:id="@+id/tv_live_goods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/activity_add_live_goods"
+                        android:textColor="@color/colorTextG4"
+                        android:textSize="@dimen/_font_36px_port" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_live_goods_click"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_live_goods"
+                    android:layout_marginTop="@dimen/h_26px_port"
+                    android:layout_alignStart="@+id/rl_live_goods"
+                    android:layout_alignEnd="@+id/rl_live_goods">
+                    <ImageView
+                        android:id="@+id/iv_live_goods"
+                        android:layout_width="@dimen/w_240px_port"
+                        android:layout_height="@dimen/h_240px_port"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/ic_add_image"/>
+                </RelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_live_goods_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/rl_live_goods_click"
+                    android:layout_alignTop="@id/rl_live_goods_click"
+                    android:layout_below="@+id/rl_live_goods"
+                    android:layout_toEndOf="@id/rl_live_goods_click"
+                    android:layout_marginLeft="@dimen/w_34px_port"
+                    android:orientation="horizontal">
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_122px_port"
+                android:layout_marginLeft="@dimen/w_169px_port"
+                android:layout_marginRight="@dimen/w_169px_port"
+                android:layout_marginTop="@dimen/h_174px_port"
+                android:layout_marginBottom="@dimen/h_84px_port"
+                android:text="@string/activity_add_live_ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_font_40px_port"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:background="@drawable/btn_login" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

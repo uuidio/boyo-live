@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/w_32px_port"
+    android:layout_marginTop="@dimen/h_45px_port"
+    android:orientation="vertical"
+    android:id="@+id/ll_view"
+    android:layout_marginRight="@dimen/w_32px_port"
+    android:layout_height="wrap_content">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:gravity="right"
+       android:id="@+id/rlview"
+       android:layout_height="wrap_content">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:scaleType="fitXY"
+           android:id="@+id/image"
+           android:background="@drawable/default_cover"
+           android:layout_height="wrap_content"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:background="@drawable/bg_live_right"
+           android:textSize="@dimen/_font_24px_port"
+           android:textColor="@color/white"
+           android:text="未开始"
+           android:layout_alignParentRight="true"
+           android:id="@+id/tv_status"
+           android:gravity="center"
+           android:layout_alignBottom="@id/image"
+           android:layout_height="wrap_content"/>
+
+   </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="@color/color_37"
+        android:layout_marginTop="@dimen/h_16px_port"
+        android:textSize="@dimen/_font_32px_port"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:text="直播名称"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="#979797"
+        android:layout_marginTop="@dimen/h_16px_port"
+        android:textSize="@dimen/_font_28px_port"
+        android:singleLine="true"
+        android:text="2020.12.03 12:00:00"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

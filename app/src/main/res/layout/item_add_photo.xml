@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="@dimen/w_188px_port"
+        android:layout_height="@dimen/h_188px_port"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="@dimen/w_34px_port"
+        android:contentDescription="@null" />
+</LinearLayout>

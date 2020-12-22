@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/app_main_bg"
+    android:layout_height="match_parent"
+    tools:context=".live.EditLiveActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/rl_top"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="@dimen/h_120px_port">
+
+        <ImageView
+            android:layout_width="@dimen/w_43px_port"
+            android:layout_centerVertical="true"
+            android:id="@+id/im_back"
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="@dimen/w_48px_port"
+            android:background="@drawable/btn_back_gray"
+            android:layout_height="@dimen/h_54px_port"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_font_36px_port"
+            android:id="@+id/tv_title"
+            tools:text="直播名称"
+            android:textColor="@color/color_37"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/w_21px_port"
+            android:layout_toRightOf="@id/im_head"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_font_36px_port"
+            android:id="@+id/tv_delete"
+            android:text="删除"
+            android:drawablePadding="@dimen/w_10px_port"
+            android:gravity="center"
+            android:drawableLeft="@drawable/pic_buycart_delete"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/w_28px_port"
+            android:textColor="#FF000F"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_font_36px_port"
+            android:id="@+id/tv_edit"
+            android:text="编辑"
+            android:gravity="center"
+            android:layout_toLeftOf="@id/tv_delete"
+            android:drawableLeft="@drawable/pic_buycart_edit"
+            android:layout_marginRight="@dimen/w_68px_port"
+            android:textColor="@color/color_37"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h_122px_port"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/w_169px_port"
+        android:layout_marginRight="@dimen/w_169px_port"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/h_750px_port"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_font_40px_port"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="@drawable/btn_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_font_44px_port"
+        android:textColor="@color/white"
+        android:id="@+id/tv_countdown"
+        app:layout_constraintTop_toBottomOf="@id/btn_ok"
+        android:layout_marginTop="@dimen/h_24px_port"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="倒计时： 00:08:58"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_font_44px_port"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:id="@+id/tv_putof_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_countdown"
+        android:layout_marginTop="@dimen/h_24px_port"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="推迟十五分钟"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/w_150px_port"
+        android:paddingRight="@dimen/w_150px_port"
+        app:layout_constraintTop_toBottomOf="@id/tv_putof_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/h_199px_port"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="清晰度"
+                android:drawableTop="@drawable/btn_definition_focused"
+                android:textSize="@dimen/_font_36px_port"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="弹幕"
+                android:drawableTop="@drawable/btn_bulletchat_normal"
+                android:textSize="@dimen/_font_36px_port"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ll_share"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="分享"
+                android:drawableTop="@drawable/btn_share_normal"
+                android:textSize="@dimen/_font_36px_port"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

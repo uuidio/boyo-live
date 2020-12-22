@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/h_120px_port">
+    <TextView
+        android:id="@+id/menu_return"
+        android:textColor="@color/color_title_black"
+        android:drawableLeft="@drawable/btn_back_gray"
+        android:layout_marginBottom="@dimen/h_30px_port"
+        android:layout_centerVertical="true"
+        android:drawableTint="@color/color_title_black"
+        android:layout_marginLeft="@dimen/w_36px_port"
+        android:layout_marginTop="@dimen/h_10px_port"
+        android:layout_width="@dimen/w_43px_port"
+        android:layout_height="@dimen/w_43px_port" />
+
+    <TextView
+        android:id="@+id/title"
+        android:textSize="@dimen/_font_36px_port"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_title_black"
+        android:textStyle="bold"
+        android:drawableTint="@color/color_title_black"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/menu_more"
+        android:textSize="@dimen/_font_36px_port"
+        android:layout_alignParentRight="true"
+        android:paddingStart="@dimen/w_20px_port"
+        android:paddingEnd="@dimen/w_20px_port"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_title_black"
+        android:textStyle="bold"
+        android:drawableTint="@color/color_title_black"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.PictureActivity">
+    <com.kol.jumhz.common.widget.ActivityTitle
+        android:id="@+id/at_picture"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:titleText="图库"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_picture"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/w_14px_port"
+        android:paddingRight="@dimen/w_14px_port"
+        android:layout_marginTop="@dimen/h_120px_port"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ok"
+        app:layout_constraintTop_toBottomOf="@+id/at_picture" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h_122px_port"
+        android:layout_marginLeft="@dimen/w_169px_port"
+        android:layout_marginRight="@dimen/w_169px_port"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/h_84px_port"
+        android:text="@string/activity_add_live_ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_font_40px_port"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="@drawable/btn_login" />
+
+</android.support.constraint.ConstraintLayout>
