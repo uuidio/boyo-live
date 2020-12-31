@@ -6,7 +6,7 @@
     <application
         android:name=".Application"
         android:allowBackup="true"
-        android:icon="@mipmap/iconuous"
+        android:icon="@mipmap/icon_boyo"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:maxAspectRatio="2.4"

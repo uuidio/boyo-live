@@ -2,7 +2,7 @@
     <item name="tag_first" type="id"></item>
 
     <item name="tag_second" type="id"></item>
-    <string name="app_name">优视直播</string>
+    <string name="app_name">播丫直播</string>
     <string name="btn_return_home">返回首页</string>
     <string name="btn_return">返回</string>
     <string name="btn_cancel">取消</string>
